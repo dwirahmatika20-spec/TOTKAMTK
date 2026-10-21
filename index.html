@@ -1,0 +1,169 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Pendalaman TKA Matematika</title>
+<style>
+:root{--bg:#f3f1ff;--c:#fff;--t:#1d1b3a;--m:#6b6890;--p:#6c4ff0;--p2:#13b5a6;--ok:#16a34a;--rg:#f59e0b;--no:#d9dcea;--bad:#dc2626;--bd:#e3e0f7;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#14122b;--c:#1e1b3f;--t:#ecebff;--m:#a6a3cf;--no:#3a3763;--bd:#34305c}}
+:root[data-theme=dark]{--bg:#14122b;--c:#1e1b3f;--t:#ecebff;--m:#a6a3cf;--no:#3a3763;--bd:#34305c}
+*{box-sizing:border-box}[hidden]{display:none!important}body{margin:0;background:var(--bg);color:var(--t);font:16px/1.5 system-ui,Segoe UI,Roboto,sans-serif}
+header{background:linear-gradient(120deg,#6c4ff0,#13b5a6);color:#fff;padding:22px 16px;text-align:center}
+header h1{margin:0;font-size:26px}header p{margin:4px 0 0;opacity:.9}
+main{max-width:920px;margin:0 auto;padding:16px}
+.card{background:var(--c);border:1px solid var(--bd);border-radius:16px;padding:18px;margin-bottom:14px;box-shadow:0 4px 14px #6c4ff014}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:600px){.row{grid-template-columns:1fr}}
+label{display:block;font-weight:600;font-size:14px;margin-bottom:10px}
+input{width:100%;padding:10px 12px;border:1px solid var(--bd);border-radius:10px;background:var(--bg);color:var(--t);font:inherit;margin-top:4px}
+.tos{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+.to{border:2px solid var(--bd);border-radius:14px;padding:14px;cursor:pointer;background:var(--c)}
+.to.sel{border-color:var(--p);background:linear-gradient(135deg,#6c4ff01f,#13b5a61f)}.to b{font-size:18px}.to small{display:block;color:var(--m)}
+button{font:inherit;cursor:pointer;border:0;border-radius:10px;padding:10px 16px;font-weight:600}
+.pri{background:linear-gradient(120deg,#6c4ff0,#13b5a6);color:#fff}.sec{background:var(--bg);color:var(--t);border:1px solid var(--bd)}.rgb{background:var(--rg);color:#fff}.rgb.on{outline:3px solid #f59e0b55}
+.top{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+#tm{font-weight:700;font-size:20px;background:#6c4ff0;color:#fff;border-radius:10px;padding:4px 12px}#tm.low{background:var(--bad)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(40px,1fr));gap:6px}
+.n{padding:8px 0;background:var(--no);color:var(--t);border-radius:8px;text-align:center}.n.a{background:var(--ok);color:#fff}.n.r{background:var(--rg);color:#fff}.n.c{outline:3px solid var(--p)}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1px solid var(--bd);border-radius:10px;margin:8px 0;cursor:pointer}.opt.s{border-color:var(--p);background:#6c4ff018}
+.lg{display:flex;gap:12px;font-size:13px;color:var(--m);margin-top:8px;flex-wrap:wrap}.lg i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:4px;vertical-align:middle}
+table{width:100%;border-collapse:collapse}td,th{border:1px solid var(--bd);padding:7px;text-align:left;font-size:14px}th{background:var(--bg)}td.c{text-align:center;width:90px}
+.big{font-size:56px;font-weight:800;background:linear-gradient(120deg,#6c4ff0,#13b5a6);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ok{color:var(--ok);font-weight:700}.no{color:var(--bad);font-weight:700}.ex{background:var(--bg);border-left:4px solid var(--p2);padding:8px 12px;border-radius:8px;font-size:14px;margin-top:8px}
+.cert{border:6px double var(--p);text-align:center;padding:24px}.cert h2{margin:0;color:var(--p);font-size:28px;letter-spacing:1px}
+.bar{height:14px;border-radius:7px;background:linear-gradient(90deg,#6c4ff0,#13b5a6)}
+.mod{position:fixed;inset:0;background:#000a;display:flex;align-items:center;justify-content:center;padding:16px}.mod .card{max-width:380px;margin:0}
+footer{text-align:center;color:var(--m);font-size:14px;padding:18px 12px 28px}
+@media print{header,footer,.np{display:none!important}body{background:#fff}main{padding:0}}
+</style></head><body>
+<header><h1>Pendalaman TKA Matematika</h1><p>Latihan Try Out untuk SMA/MA dan SMK/MAK</p></header>
+<main>
+<section id="s0"><div class="card"><h3 style="margin-top:0">Pilih Try Out</h3><div class="tos" id="tos"></div>
+<div class="row"><label>Nama Siswa<input id="f1" placeholder="Nama lengkap"></label><label>Kelas<input id="f2" placeholder="mis. XII IPA 1"></label><label>Peserta Didik (NISN / No. Peserta)<input id="f3"></label><label>Asal Sekolah<input id="f4" placeholder="Nama sekolah"></label></div>
+<p id="er" class="no"></p><button class="pri" onclick="start()">Mulai Try Out</button></div></section>
+<section id="s1" hidden>
+<div class="card top"><div><b id="who"></b><br><small id="inf" style="color:var(--m)"></small></div><div><span id="tm"></span> <button class="sec" onclick="ask()">Akhiri</button></div></div>
+<div class="card"><div id="qa"></div><div class="top" style="margin-top:14px"><button class="sec" onclick="mv(-1)">« Sebelumnya</button><button class="rgb" id="rb" onclick="rag()">Ragu-ragu</button><button class="pri" onclick="mv(1)">Selanjutnya »</button></div></div>
+<div class="card"><b>Navigasi Soal</b><div class="grid" id="nv" style="margin-top:8px"></div><div class="lg"><span><i style="background:var(--ok)"></i>Dijawab</span><span><i style="background:var(--rg)"></i>Ragu-ragu</span><span><i style="background:var(--no)"></i>Belum dijawab</span></div></div></section>
+<section id="s2" hidden><div class="card" style="text-align:center"><div>Nilai Akhir</div><div class="big" id="sc"></div><div id="id2"></div><p id="st"></p><div class="np"><button class="pri" onclick="cert()">Lihat Sertifikat &amp; Progres</button> <button class="sec" onclick="show('s0')">Kembali ke Awal</button></div></div><h3>Pembahasan Soal</h3><div id="pb"></div></section>
+<section id="s3" hidden><div class="np" style="margin-bottom:10px"><button class="pri" id="dlb" hidden onclick="dl()">⬇ Unduh Sertifikat (PNG)</button> <button class="sec" onclick="window.print()">Cetak</button> <span id="dm" style="font-size:14px"></span> <button class="sec" onclick="show('s2')">Kembali</button></div><div class="card cert" id="ct"></div></section>
+</main>
+<footer>Dikembangkan oleh <b>Dwi Fadila Rahmatika, S.Pd</b> · SMAN 1 Rajabasa</footer>
+<div id="md" class="mod" hidden><div class="card"><p id="mt"></p><button class="pri" onclick="fin()">Ya, kumpulkan</button> <button class="sec" onclick="$('#md').hidden=true">Kembali</button></div></div>
+<script>
+const $=s=>document.querySelector(s),L='ABCDE';
+const SET=['Setuju','Tidak Setuju'],TEP=['Tepat','Tidak Tepat'],BEN=['Benar','Salah'];
+const T1=[
+['pg','Wildan memperoleh poin −7, 11, −4, 23, −20, 14. Alfa memperoleh −8, 15, 18, −9, 11, −5. Nilai = total poin. Selisih nilai Wildan dan Alfa adalah ….',['5','6','7','9','10'],0,'Wildan = 17, Alfa = 22. Selisih = 5.'],
+['mc','Bu Mita: 5½ kg terigu + 3¼ kg tapioka. Bu Ratih: 5,75 + 3,5. Bu Susan: 5¼ + 4½. Bu Tutik: 4¾ + 3,25. Centang pernyataan yang benar!',['Total Bu Mita 8½ kg','Total Bu Ratih 9¼ kg','Total Bu Susan 9¾ kg','Total Bu Tutik 7¾ kg','Selisih total Bu Mita dan Bu Ratih ½ kg'],[1,2,4],'Mita 8¾, Ratih 9¼, Susan 9¾, Tutik 8. Selisih Mita–Ratih = ½ kg.'],
+['pg','Bentuk sederhana dari (2p¹⁰q⁻¹²r¹⁴)/(4p⁵q⁹r¹⁶) × (8qr⁴)/p⁶ adalah ….',['2r²/(pq²⁰)','4r²/(pq²⁰)','2pr²/q²⁰','4pr²/q²⁰','4r²/(pq²⁶)'],1,'Koefisien (2/4)×8 = 4; p: 10−5−6 = −1; q: −12−9+1 = −20; r: 14−16+4 = 2. Hasil 4r²/(pq²⁰).'],
+['mc','Dita beli 1 penggaris + 3 pensil Rp11.000. Rian beli 2 penggaris + 2 pensil Rp10.000. Centang yang benar!',['2 penggaris + 1 pensil = Rp5.000','2 penggaris + 3 pensil = Rp13.000','3 penggaris + 1 pensil = Rp9.000','3 penggaris + 2 pensil = Rp12.000','1 penggaris + 4 pensil = Rp9.000'],[1,2,3],'x + 3y = 11.000 dan x + y = 5.000 → y = 3.000, x = 2.000. Cek tiap pernyataan.'],
+['pg','Penjahit: pakaian anak (x) butuh 1 jam potong, 0,5 jam obras, 1,5 jam jahit; dewasa (y) butuh 1,5; 1; 2,5 jam. Waktu tersedia 20, 15, 40 jam. Model matematikanya ….',['2x+3y ≥ 40, x+2y ≤ 30, 3x+5y ≤ 80','2x+3y ≤ 40, x+2y ≥ 30, 3x+5y ≤ 80','2x+3y ≤ 40, x+2y ≤ 30, 3x+5y ≥ 80','2x+3y ≤ 40, x+2y ≤ 30, 3x+5y ≤ 80; x,y ≥ 0','2x+3y ≥ 40, x+2y ≥ 30, 3x+5y ≤ 80'],3,'x+1,5y ≤ 20 → 2x+3y ≤ 40; 0,5x+y ≤ 15 → x+2y ≤ 30; 1,5x+2,5y ≤ 40 → 3x+5y ≤ 80.'],
+['mc','Untuk SPLTV 3x+5y+2z=21; 4x+2y+3z=19; 2x+3y+3z=15, centang yang benar!',['x+y+z = 6','2x+y+z = 9','x+2y+z = 7','x+y+2z = 6','2x+2y+z = 11'],[0,1,4],'Diperoleh x=3, y=2, z=1. Maka x+2y+z = 8 dan x+y+2z = 7 (salah).'],
+['pg','Tiket pelajar Rp5.000 (x), tiket umum Rp8.000 (y). Ruangan maksimal 1.000 orang; panitia telah mengeluarkan Rp2.000.000. Model matematikanya ….',['5.000x+8.000y ≤ 2.000.000; x+y > 1.000','5.000x+8.000y ≤ 2.000.000; x+y ≥ 1.000','5.000x+8.000y ≥ 2.000.000; x+y ≥ 1.000','5.000x+8.000y ≤ 2.000.000; x+y ≤ 1.000','5.000x+8.000y ≥ 2.000.000; x+y ≤ 1.000'],4,'Kapasitas paling banyak: x+y ≤ 1.000. Pendapatan menutup biaya: 5.000x+8.000y ≥ 2.000.000. x,y ≥ 0.'],
+['pg','Grafik fungsi f: R → R berupa hiperbola dengan asimtot tegak x = −2 dan asimtot datar y = 1. Daerah asal fungsi adalah ….',['{x | x ≠ −2, x ∈ R}','{x | x ≠ 1, x ∈ R}','{x | x < −2, x ∈ R}','{x | x > −2, x ∈ R}','{x | x > 1, x ∈ R}'],0,'Asimtot tegak x = −2 → fungsi tidak terdefinisi di x = −2.'],
+['pg','Invers dari f(x) = (x + 12)/(1 − 4x) adalah ….',['(12−4x)/(−1−x)','(12−x)/(−1−4x)','(12+x)/(−1−4x)','(12−x)/(−1+4x)','(12−x)/(1−4x)'],1,'y − 4xy = x + 12 → x = (y−12)/(1+4y). Jadi f⁻¹(x) = (x−12)/(1+4x) = (12−x)/(−1−4x).'],
+['tf','Diketahui f(x) = x − 8, g(x) = 2x + 10, h(x) = x² − 1. Pilih Setuju/Tidak Setuju!',['(f∘g)(x) = 2x + 2','(f∘h)(x) = x² − 7','(g∘f)(x) = 2x − 6','(g∘h)(x) = 2x² + 8','(f∘g∘h)(x) = 2x²'],[1,0,1,1,1],'(f∘h)(x) = x² − 9, sehingga pernyataan ke-2 tidak setuju. Lainnya sesuai perhitungan.',SET],
+['tf','Dengan f, g, h pada soal sebelumnya, pilih Tepat/Tidak Tepat!',['(f∘g)(2) = 4','(f∘g)(3) = 8','(g∘f)(2) = 2','(g∘f)(3) = 6','(f∘g∘h)(1) = 2'],[0,1,0,0,1],'(f∘g)(x)=2x+2 → (f∘g)(2)=6, (f∘g)(3)=8. (g∘f)(x)=2x−6 → (g∘f)(2)=−2, (g∘f)(3)=0. (f∘g∘h)(1)=2.',TEP],
+['pg','Deret aritmetika dengan U6 + U9 + U12 + U15 = 20. Jumlah 20 suku pertama adalah ….',['50','80','100','230','200'],2,'U6+U15 = U9+U12 = U1+U20 → 2(U1+U20)=20 → U1+U20 = 10. S20 = 10 × 10 = 100.'],
+['tf','Barisan 10, 13, 16, 19, … Pilih Benar/Salah!',['U1 + U5 = 32','Beda barisan adalah 4','Suku ke-6 adalah 25','Suku ke-7 adalah 27','Suku ke-8 adalah 30'],[1,0,1,0,0],'a = 10, b = 3. U5 = 22, U6 = 25, U7 = 28, U8 = 31.',BEN],
+['mc','Hasil kali suku kedua dan keempat barisan geometri positif adalah 16, jumlah tiga suku pertama 7. Centang yang benar!',['Rasio barisan adalah 2','Suku pertama adalah 1','Suku kedua adalah 2','Suku ketiga adalah 6','Suku keempat adalah 12'],[0,1,2],'U2·U4 = U3² = 16 → U3 = 4. Dari S3 = 7 diperoleh r = 2, a = 1. Barisan 1, 2, 4, 8.'],
+['tf','Modal Rp10.000.000 disimpan dengan bunga majemuk 10%/tahun. Pilih Benar/Salah!',['Simpanan 2 tahun Rp12.100.000','Simpanan 3 tahun Rp14.200.000','Simpanan 4 tahun Rp14.641.000','Simpanan 5 tahun Rp17.550.000','Simpanan 6 tahun Rp17.715.610'],[1,0,1,0,1],'Mn = 10.000.000 × 1,1ⁿ: n=3 → 13.310.000; n=5 → 16.105.100; n=2, 4, 6 sesuai.',BEN],
+['pg','Dua garis sejajar dipotong garis lain. Sudut (b+12)° dan 54° saling berpelurus. Nilai b adalah ….',['66°','78°','102°','114°','126°'],3,'(b+12) + 54 = 180 → b = 114°.'],
+['pg','Dua segitiga kongruen: segitiga ABC sama kaki (AC = BC = 13 cm) dengan alas AB = 24 cm. Luas segitiga DEF adalah … cm².',['60','72','75','90','120'],0,'Tinggi = √(13²−12²) = 5. Luas = ½×24×5 = 60 cm². Kongruen → luas DEF = 60.'],
+['pg','Segitiga PQR siku-siku di R. PQ = 20 cm dan QR = 14 cm. Panjang PR adalah … cm.',['2√51','3√41','3√61','4√91','5√31'],0,'PR = √(20²−14²) = √204 = 2√51.'],
+['pg','Hasil translasi titik R(−17, 2) oleh T = (15, −4) adalah ….',['(−2, −6)','(−2, −4)','(−2, −2)','(−2, 2)','(2, −6)'],2,'R′ = (−17+15, 2−4) = (−2, −2).'],
+['mc','f(x) = 10 − x ditransformasikan oleh T = (1, 3) menghasilkan g(x). Centang yang benar!',['g(x) = −x + 14','g(1) = 14','g(2) = 13','g(3) = 11','g(4) = 10'],[0,3,4],'g(x) = f(x−1)+3 = −x + 14. g(1)=13, g(2)=12, g(3)=11, g(4)=10.'],
+['pg','Hasil pencerminan kurva y = 1 − x² oleh garis x = 4 adalah ….',['y = −x² − 16x − 63','y = −x² + 16x − 63','y = −x² + 16x + 63','y = −x² + 16x − 65','y = −x² + 16x + 65'],1,'x′ = 8 − x → y = 1 − (8−x)² = −x² + 16x − 63.'],
+['tf','Segilima A(5,−7), B(7,−1), C(4,9), D(3,12), E(1,−8) didilatasi faktor 2 pusat O. Pilih Benar/Salah!',['A′ = (10, −14)','B′ = (14, −4)','C′ = (8, 18)','D′ = (6, 24)','E′ = (2, −18)'],[0,1,0,0,1],'Dilatasi (x,y) → (2x,2y): B′ = (14,−2), E′ = (2,−16).',BEN],
+['pg','Translasi fungsi y = (1/4)^(x−9) oleh T1 = (3, 4) dilanjutkan T2 = (1, 0) adalah ….',['y = (1/4)^(x−16) − 4','y = (1/4)^(x−13) − 4','y = (1/4)^(x−13) + 4','y = (1/4)^(x−12) + 4','y = (1/4)^(x−11) + 4'],2,'Translasi total (4, 4): y = (1/4)^(x−4−9) + 4 = (1/4)^(x−13) + 4.'],
+['mc','Layang-layang ABCD dengan diagonal berpotongan di O (AC ⟂ BD). AB = 8, BC = 13, OB = 5 cm. Centang yang benar!',['Keliling layang-layang 42 cm','Luas segitiga AOB = 5√39/2 cm²','Luas segitiga BOC = 65 cm²','Panjang diagonal AC = 12 cm','Luas layang-layang = 60 cm²'],[0,1],'AO = √39, OC = 12. Keliling = 2(8+13) = 42. L△AOB = ½·5·√39. L△BOC = 30. AC = √39+12.'],
+['pg','Kerucut berjari-jari alas 5 cm dan tinggi 9 cm. Jari-jarinya diperbesar tiga kali. Perbandingan volume sebelum dan sesudah adalah ….',['1 : 3','2 : 3','1 : 6','1 : 9','2 : 9'],3,'V ∝ r². 5² : 15² = 25 : 225 = 1 : 9.'],
+['tf','Kubus ABCD.EFGH rusuk 10√6 cm. Pilih Tepat/Tidak Tepat!',['Jarak A ke G = 30√2 cm','Jarak A ke H = 30√2 cm','Jarak B ke G = 20√3 cm','Jarak E ke H = 20√3 cm','Jarak D ke rusuk AE = 10√6 cm'],[0,1,0,1,0],'Diagonal ruang = s√3 = 30√2; diagonal bidang = s√2 = 20√3; E–H adalah rusuk (10√6).',TEP],
+['mc','Balok PQRS.TUVW: PQ = 12, QR = 6, RV = 3 cm. Centang yang benar!',['Jarak P ke bidang QRVU = 12 cm','Jarak R ke bidang PSWT = 12 cm','Jarak P ke garis QU = 12√2 cm','Jarak R ke garis PT = 12√2 cm','Jarak S ke V = 3√17 cm'],[0,1,4],'P ke garis QU = PQ = 12. R ke garis PT = PR = 6√5. SV = √(12²+3²) = 3√17.'],
+['pg','Segitiga siku-siku di A, AB = 8 cm, AC = 10 cm. Nilai sin C adalah ….',['√41/41','2√41/41','3√41/41','4√41/41','8√41/41'],3,'BC = 2√41. sin C = AB/BC = 8/(2√41) = 4√41/41.'],
+['pg','Benda pada koordinat kutub (3√2, 225°). Koordinat Cartesiusnya ….',['(1, 3)','(−1, 3)','(3, 3)','(−3, 3)','(−3, −3)'],4,'x = 3√2 cos225° = −3; y = 3√2 sin225° = −3.'],
+['pg','Diketahui tan A = √2/6, A di kuadran I. Nilai cos A adalah ….',['√38/19','3√38/38','2√38/19','5√38/19','3√38/19'],4,'Sisi miring = √(2+36) = √38. cos A = 6/√38 = 3√38/19.'],
+['mc','Diagram batang nilai: 6 → 4 siswa, 7 → 10, 8 → 8, 9 → 7, 10 → 3. Centang yang benar!',['Banyak datum ada 40','Siswa nilai kurang dari 8 ada 14','Siswa nilai lebih dari 8 ada 10','Siswa nilai kurang dari 7 ada 6','Siswa nilai lebih dari 9 ada 3'],[1,2,4],'Total 32 siswa. <8: 4+10 = 14; >8: 7+3 = 10; <7: 4; >9: 3.'],
+['mc','Tabel frekuensi berat badan (kg): 31–35 (4), 36–40 (8), 41–45 (12), 46–50 (18), 51–55 (9), 61–65 (5). Centang yang benar!',['Banyak kelas ada 5','Batas bawah kelas pertama 31,5','Batas atas kelas pertama 35','Tepi bawah kelas pertama 30,5','Tepi atas kelas pertama 34,5'],[2,3],'Ada 6 kelas. Kelas pertama: batas bawah 31, batas atas 35, tepi bawah 30,5, tepi atas 35,5.'],
+['pg','Histogram dengan kelas 10,5–20,5; 20,5–30,5; … ; 60,5–70,5 dan frekuensi 6, 9, 15, 10, 5, 2. Median data adalah ….',['32,17','33,77','34,17','35,77','36,17'],4,'n = 47, letak median data ke-23,5 di kelas 30,5–40,5. Me = 30,5 + ((23,5−15)/15)×10 ≈ 36,17.'],
+['pg','Data ukuran sepatu: 30–34 (2), 35–39 (5), 40–44 (10), 45–49 (14), 50–54 (6), 55–59 (3). Simpangan baku data adalah ….',['5,14','5,72','5,94','6,27','6,68'],3,'Rata-rata 45,25; Σf(x−x̄)² = 1.527,5; dengan pembagi n−1 simpangan baku ≈ 6,26 → pilihan terdekat 6,27.']];
+const T2=[
+['pg','Andi mendapat poin 9, −6, 12, −15, 8. Budi mendapat −5, 10, 7, −12, 14. Selisih nilai Andi dan Budi adalah ….',['4','6','8','10','12'],1,'Andi = 8, Budi = 14. Selisih = 6.'],
+['pg','Bentuk sederhana dari (3a⁸b⁻⁶)/(6a³b²) × (4b⁵)/a² adalah ….',['2a³/b³','2a³b³','a³/b³','2a⁵/b³','4a³/b³'],0,'Koefisien (3/6)×4 = 2; a: 8−3−2 = 3; b: −6−2+5 = −3.'],
+['mc','2 buku + 1 pensil Rp7.000 dan 1 buku + 2 pensil Rp8.000. Centang yang benar!',['3 buku + 1 pensil = Rp9.000','1 buku + 1 pensil = Rp5.000','2 buku + 2 pensil = Rp9.000','1 buku + 3 pensil = Rp11.000','4 buku + 1 pensil = Rp11.000'],[0,1,3,4],'Buku = 2.000, pensil = 3.000. 2 buku + 2 pensil = 10.000 (bukan 9.000); pernyataan lain benar.'],
+['pg','f(x) = 3x − 5 dan g(x) = x² + 2. Nilai (g∘f)(2) adalah ….',['1','3','6','9','11'],1,'f(2) = 1, g(1) = 1 + 2 = 3.'],
+['pg','Deret aritmetika dengan U3 = 11 dan U7 = 23. Jumlah 10 suku pertama adalah ….',['155','165','175','185','195'],3,'b = 3, a = 5. S10 = 5(10 + 27) = 185.'],
+['pg','Modal Rp5.000.000 dibungakan majemuk 10%/tahun. Nilai simpanan setelah 3 tahun adalah ….',['Rp6.300.000','Rp6.500.000','Rp6.655.000','Rp6.800.000','Rp7.000.000'],2,'5.000.000 × 1,1³ = 6.655.000.'],
+['pg','Segitiga sama kaki beralas 16 cm dengan panjang kaki 10 cm. Luasnya … cm².',['40','48','60','80','96'],1,'Tinggi = √(10²−8²) = 6. Luas = ½×16×6 = 48.'],
+['pg','Hasil translasi titik P(−5, 3) oleh T = (8, −6) adalah ….',['(3, −3)','(3, 3)','(−3, −3)','(13, −9)','(−13, 9)'],0,'(−5+8, 3−6) = (3, −3).'],
+['pg','Benda pada koordinat kutub (4√2, 135°). Koordinat Cartesiusnya ….',['(4, 4)','(−4, 4)','(4, −4)','(−4, −4)','(4√2, 4√2)'],1,'x = 4√2 cos135° = −4; y = 4√2 sin135° = 4.']];
+const TO={1:{n:'Try Out 1',min:90,Q:T1},2:{n:'Try Out 2',min:20,Q:T2}};
+let sel=1,Q,cur,ans,rg,tm,left,me,rec;
+const show=id=>{document.querySelectorAll('section').forEach(e=>e.hidden=e.id!=id);window.scrollTo(0,0)};
+const lab=q=>q[5]||[];
+function tos(){$('#tos').innerHTML=[1,2].map(k=>k==2?`<div class="to" style="opacity:.5;cursor:not-allowed"><b>${TO[k].n}</b><small>Segera hadir (dinonaktifkan)</small></div>`:`<div class="to ${sel==k?'sel':''}" onclick="sel=${k};tos()"><b>${TO[k].n}</b><small>${TO[k].Q.length} soal · ${TO[k].min} menit</small></div>`).join('')}tos();
+const hist=()=>{try{return JSON.parse(localStorage.getItem('tka_h')||'[]')}catch(e){return[]}};
+function start(){me={nama:$('#f1').value.trim(),kelas:$('#f2').value.trim(),pd:$('#f3').value.trim(),sekolah:$('#f4').value.trim()};
+if(Object.values(me).some(v=>!v)){$('#er').textContent='Lengkapi semua data terlebih dahulu.';return}
+$('#er').textContent='';Q=TO[sel].Q;cur=0;ans=[];rg=[];left=TO[sel].min*60;
+$('#who').textContent=me.nama;$('#inf').textContent=`${me.kelas} · ${me.sekolah} · ${TO[sel].n}`;
+clearInterval(tm);tm=setInterval(()=>{left--;tick();if(left<=0)fin()},1000);tick();render();show('s1')}
+function tick(){const m=Math.floor(left/60),s=left%60;$('#tm').textContent=`⏱ ${m}:${String(s).padStart(2,'0')}`;$('#tm').className=left<300?'low':''}
+const done=i=>{const q=Q[i],a=ans[i];if(q[0]=='pg')return a!=null;return !!a&&a.some(v=>q[0]=='mc'?v:v!=null)};
+function render(){const q=Q[cur],a=ans[cur];let h=`<b style="color:var(--p)">Soal ${cur+1} dari ${Q.length}</b><p>${q[1]}</p>`;
+if(q[0]=='pg')h+=q[2].map((o,j)=>`<div class="opt ${a===j?'s':''}" onclick="pick(${j})"><b>${L[j]}.</b><span>${o}</span></div>`).join('');
+else if(q[0]=='mc')h+=q[2].map((o,j)=>`<div class="opt ${a&&a[j]?'s':''}" onclick="pick(${j})"><b>${a&&a[j]?'☑':'☐'}</b><span>${o}</span></div>`).join('')+'<small style="color:var(--m)">Jawaban dapat lebih dari satu.</small>';
+else{const l=lab(q);h+=`<table><tr><th>Pernyataan</th><th>${l[0]}</th><th>${l[1]}</th></tr>`+q[2].map((o,j)=>`<tr><td>${o}</td><td class="c"><input type="radio" style="width:auto" ${a&&a[j]===true?'checked':''} onclick="tf(${j},true)"></td><td class="c"><input type="radio" style="width:auto" ${a&&a[j]===false?'checked':''} onclick="tf(${j},false)"></td></tr>`).join('')+'</table>'}
+$('#qa').innerHTML=h;$('#rb').className='rgb'+(rg[cur]?' on':'');$('#rb').textContent=rg[cur]?'✓ Ragu-ragu':'Ragu-ragu';nav()}
+function nav(){$('#nv').innerHTML=Q.map((_,i)=>`<button class="n ${rg[i]?'r':done(i)?'a':''} ${i==cur?'c':''}" onclick="cur=${i};render()">${i+1}</button>`).join('')}
+function pick(j){const q=Q[cur];if(q[0]=='pg')ans[cur]=j;else{ans[cur]=ans[cur]||[];ans[cur][j]=!ans[cur][j]}render()}
+function tf(j,v){ans[cur]=ans[cur]||[];ans[cur][j]=v;render()}
+const mv=d=>{cur=Math.max(0,Math.min(Q.length-1,cur+d));render()};
+const rag=()=>{rg[cur]=!rg[cur];render()};
+function ask(){const a=Q.filter((_,i)=>done(i)).length;$('#mt').innerHTML=`Dijawab: <b>${a}</b> · Belum: <b>${Q.length-a}</b> · Ragu-ragu: <b>${rg.filter(Boolean).length}</b><br>Kumpulkan jawaban sekarang?`;$('#md').hidden=false}
+function fr(i){const q=Q[i],a=ans[i],k=q[3];if(q[0]=='pg')return a===k?1:0;
+if(q[0]=='mc')return q[2].filter((_,j)=>!!(a&&a[j])===k.includes(j)).length/q[2].length;
+return q[2].filter((_,j)=>a&&a[j]!==undefined&&a[j]===!!k[j]).length/q[2].length}
+function keyT(q){const k=q[3];if(q[0]=='pg')return `${L[k]}. ${q[2][k]}`;if(q[0]=='mc')return k.map(j=>q[2][j]).join('; ');const l=lab(q);return q[2].map((_,j)=>`${j+1}: ${l[k[j]?0:1]}`).join(', ')}
+function yourT(i){const q=Q[i],a=ans[i];if(!done(i))return '— (tidak dijawab)';if(q[0]=='pg')return `${L[a]}. ${q[2][a]}`;if(q[0]=='mc')return q[2].filter((_,j)=>a[j]).join('; ');const l=lab(q);return q[2].map((_,j)=>a[j]===undefined?`${j+1}: –`:`${j+1}: ${l[a[j]?0:1]}`).join(', ')}
+function fin(){clearInterval(tm);$('#md').hidden=true;const f=Q.map((_,i)=>fr(i)),tot=f.reduce((x,y)=>x+y,0),sc=Math.round(tot/Q.length*1000)/10;
+const used=TO[sel].min*60-left;
+rec={id:Date.now(),to:sel,...me,score:sc,full:f.filter(x=>x==1).length,ans:Q.filter((_,i)=>done(i)).length,n:Q.length,dur:used,date:new Date().toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'})};
+const h=hist();h.push(rec);try{localStorage.setItem('tka_h',JSON.stringify(h))}catch(e){}
+$('#sc').textContent=sc;$('#id2').innerHTML=`<b>${me.nama}</b><br>${me.kelas} · ${me.sekolah}<br><small>Peserta Didik: ${me.pd} · ${TO[sel].n}</small>`;
+$('#st').textContent=`Benar sempurna ${rec.full} dari ${Q.length} soal · Dijawab ${rec.ans} soal`;
+$('#pb').innerHTML=Q.map((q,i)=>`<div class="card"><b>Soal ${i+1}</b> <span class="${f[i]==1?'ok':'no'}">${f[i]==1?'✓ Benar':f[i]>0?'◐ Sebagian benar':'✗ Salah'}</span><p>${q[1]}</p><small>Jawabanmu: ${yourT(i)}</small><br><small><b>Kunci:</b> ${keyT(q)}</small><div class="ex"><b>Pembahasan:</b> ${q[4]}</div></div>`).join('');show('s2')}
+function cert(){const h=hist().filter(r=>r.nama.toLowerCase()==rec.nama.toLowerCase()&&r.sekolah.toLowerCase()==rec.sekolah.toLowerCase());
+const pr=s=>s>=85?'Sangat Baik':s>=70?'Baik':s>=55?'Cukup':'Perlu Ditingkatkan';
+$('#ct').innerHTML=`<small>Pendalaman TKA Matematika</small><h2>SERTIFIKAT HASIL ${TO[rec.to].n.toUpperCase()}</h2><p>Diberikan kepada</p><h3 style="font-size:26px;margin:0">${rec.nama}</h3><p>${rec.kelas} · ${rec.sekolah}<br>Peserta Didik: ${rec.pd}</p>
+<div class="big">${rec.score}</div><b>Predikat: ${pr(rec.score)}</b>
+<table style="margin:14px 0;text-align:left"><tr><th colspan="2">Rincian Hasil</th></tr><tr><td>Tanggal</td><td>${rec.date}</td></tr><tr><td>Jumlah soal</td><td>${rec.n}</td></tr><tr><td>Soal dijawab</td><td>${rec.ans}</td></tr><tr><td>Benar sempurna</td><td>${rec.full}</td></tr><tr><td>Waktu pengerjaan</td><td>${Math.floor(rec.dur/60)} menit ${rec.dur%60} detik</td></tr></table>
+<table style="text-align:left"><tr><th>#</th><th>Try Out</th><th>Tanggal</th><th>Nilai</th><th>Perubahan</th><th style="width:30%">Grafik</th></tr>${h.map((r,i)=>`<tr><td>${i+1}</td><td>${TO[r.to].n}</td><td>${r.date}</td><td><b>${r.score}</b></td><td>${i?(r.score-h[i-1].score>=0?'▲ +':'▼ ')+Math.round((r.score-h[i-1].score)*10)/10:'–'}</td><td><div class="bar" style="width:${r.score}%"></div></td></tr>`).join('')}</table>
+<p style="margin-top:16px"><small>Dikembangkan oleh Dwi Fadila Rahmatika, S.Pd · SMAN 1 Rajabasa</small></p>`;show('s3')}
+let dlm=null;
+try{window.claude&&claude.use('downloads').then(d=>{dlm=d;if(d)$('#dlb').hidden=false}).catch(()=>{})}catch(e){}
+async function dl(){
+const h=hist().filter(r=>r.nama.toLowerCase()==rec.nama.toLowerCase()&&r.sekolah.toLowerCase()==rec.sekolah.toLowerCase());
+const pr=s=>s>=85?'Sangat Baik':s>=70?'Baik':s>=55?'Cukup':'Perlu Ditingkatkan';
+const W=1600,H=1060+h.length*46,c=document.createElement('canvas');c.width=W;c.height=H;const x=c.getContext('2d');
+x.fillStyle='#fff';x.fillRect(0,0,W,H);
+const g=x.createLinearGradient(0,0,W,0);g.addColorStop(0,'#6c4ff0');g.addColorStop(1,'#13b5a6');
+x.strokeStyle=g;x.lineWidth=14;x.strokeRect(20,20,W-40,H-40);x.lineWidth=3;x.strokeRect(48,48,W-96,H-96);
+const T=(s,y,f,col,al,px)=>{x.font=f+' system-ui,Segoe UI,Arial,sans-serif';x.fillStyle=col;x.textAlign=al||'center';x.fillText(s,px==null?W/2:px,y)};
+T('Pendalaman TKA Matematika',120,'600 30px','#555');
+T('SERTIFIKAT HASIL '+TO[rec.to].n.toUpperCase(),190,'800 54px','#6c4ff0');
+T('Diberikan kepada',250,'400 28px','#555');
+T(rec.nama,320,'700 58px','#1d1b3a');
+T(rec.kelas+' · '+rec.sekolah,372,'400 28px','#333');
+T('Peserta Didik: '+rec.pd,412,'400 26px','#555');
+T(String(rec.score),520,'800 110px',g);
+T('Predikat: '+pr(rec.score),570,'700 32px','#1d1b3a');
+[['Tanggal',rec.date],['Jumlah soal',rec.n],['Soal dijawab',rec.ans],['Benar sempurna',rec.full],['Waktu pengerjaan',Math.floor(rec.dur/60)+' menit '+rec.dur%60+' detik']].forEach((r,i)=>{const y=640+i*38;T(r[0],y,'400 26px','#555','left',420);T(String(r[1]),y,'700 26px','#1d1b3a','left',820)});
+T('Progres Try Out',870,'700 30px','#6c4ff0');
+[['No',200],['Try Out',260],['Tanggal',480],['Nilai',850],['Perubahan',960],['Grafik',1150]].forEach(a=>T(a[0],915,'700 24px','#555','left',a[1]));
+const g2=x.createLinearGradient(1150,0,1450,0);g2.addColorStop(0,'#6c4ff0');g2.addColorStop(1,'#13b5a6');
+h.forEach((r,i)=>{const y=965+i*46,d=i?Math.round((r.score-h[i-1].score)*10)/10:null;
+T(String(i+1),y,'400 24px','#1d1b3a','left',200);T(TO[r.to].n,y,'400 24px','#1d1b3a','left',260);T(r.date,y,'400 24px','#1d1b3a','left',480);T(String(r.score),y,'700 24px','#1d1b3a','left',850);
+T(d==null?'–':(d>=0?'▲ +':'▼ ')+d,y,'400 24px',d==null?'#555':d>=0?'#16a34a':'#dc2626','left',960);
+x.fillStyle=g2;x.fillRect(1150,y-20,Math.max(4,r.score/100*300),20)});
+T('Dikembangkan oleh Dwi Fadila Rahmatika, S.Pd · SMAN 1 Rajabasa',H-80,'400 24px','#666');
+const b=await new Promise(r=>c.toBlob(r,'image/png'));
+try{await dlm.save({filename:('Sertifikat '+TO[rec.to].n+' - '+rec.nama+'.png').replace(/[\\/:*?"<>|]/g,'_'),data:b});$('#dm').textContent='Sertifikat tersimpan.'}
+catch(e){$('#dm').textContent=e&&e.code=='declined'?'Unduhan dibatalkan.':'Unduhan tidak tersedia di tampilan ini.'}}
+</script></body></html>
